@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* layout for search box*/
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* search input styling*/
+#searchInput {
+    padding: 10px;
+    width: 260px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* search button styling*/
+#searchBtn {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background: #4ec4f2;
+    color: white;
+    border-radius: 5px;
+}
+
+/* grid layout for results */
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* individual result card */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* anime poster image */
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* anime title */
+.card h3 {
+    margin: 10px 0 8px;
+}
+
+/* anime description text */
+.card p {
+    font-size: 14px;
+    color: #444;
+}
