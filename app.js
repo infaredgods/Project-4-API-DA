@@ -38,17 +38,33 @@ function displayResults(animeList) {
     return;
   }
 
+  // insert HTML first
   results.innerHTML = animeList
     .map(anime => {
-      const attributes = anime.attributes;
+      const a = anime.attributes;
 
       return `
-        <div class="card">
-          <img src="${attributes.posterImage?.medium || ''}" alt="Poster">
-          <h3>${attributes.canonicalTitle}</h3>
-          <p>${attributes.synopsis?.substring(0, 200) || "No description."}...</p>
+        <div class="card" style="opacity: 0; transform: scale (0.8);">
+          <img src="${a.posterImage?.medium || ''}" alt="Poster">
+          <h3>${a.canonicalTitle}</h3>
+          <p>${a.synopsis?.substring(0, 200) || "No description."}...</p>
         </div>
       `;
     })
     .join("");
+
+    // Animate each card with Popmotion
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card, i) => {
+        popmotion.tween({
+            from: { opacity: 0, scale: 0.8 },
+            to: { opacity: 1, scale: 1 },
+            duration: 400,
+            delay: i * 120
+        }).start(v => {
+            card.style.opacity = v.opacity;
+            card.style.transform = `scale(${v.scale})`;
+        });
+    });
 }
