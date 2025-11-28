@@ -53,9 +53,19 @@ function displayResults(animeList) {
     })
     .join("");
 
-    // Animate each card with Popmotion
-    const cards = document.querySelectorAll('.card');
+    
 
+
+    
+    // Click to expand/collapse cards
+    const cards = results.querySelectorAll(".card");
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            card.classList.toggle("expanded");
+        });
+    });
+
+// Animate each card with Popmotion
     cards.forEach((card, i) => {
         popmotion.tween({
             from: { opacity: 0, scale: 0.8 },
