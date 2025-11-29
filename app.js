@@ -14,7 +14,7 @@ async function fetchAnime() {
   if (!query) return;
 
   //show "Loading..." message while waiting for API  
-  results.innerHTML = `<p>Loading...</p>`;
+  results.innerHTML = `<p style="text-align: center;">Loading...</p>`;
 
   try {
     // build the Api URL using the users search text
@@ -53,10 +53,6 @@ function displayResults(animeList) {
     })
     .join("");
 
-    
-
-
-    
     // Click to expand/collapse cards
     const cards = results.querySelectorAll(".card");
     cards.forEach(card => {
