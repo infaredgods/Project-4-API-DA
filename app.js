@@ -63,7 +63,7 @@ function displayResults(animeList) {
 
 // Animate each card with Popmotion
     cards.forEach((card, i) => {
-        popmotion.tween({
+        popmotion.tween({             // animate between two values over a set duration of time.
             from: { opacity: 0, scale: 0.8 },
             to: { opacity: 1, scale: 1 },
             duration: 400,
